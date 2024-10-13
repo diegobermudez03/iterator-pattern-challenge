@@ -11,9 +11,9 @@ public class ProfileIteratorUsers implements ProfileIterator{
     private ArrayDeque<SocialNetworkProfile> toVisit;
 
     public ProfileIteratorUsers(SocialNetworkProfile entryPoint){
-        addToVisit(entryPoint);
         visited = new HashSet<>();
         toVisit = new ArrayDeque<>();
+        addToVisit(entryPoint);
     }
 
     private void addToVisit(SocialNetworkProfile profile){
