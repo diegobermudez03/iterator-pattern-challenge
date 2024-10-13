@@ -1,9 +1,13 @@
 package com.example.entities;
 
+import com.example.iteratorPattern.ProfileIterator;
+import com.example.iteratorPattern.ProfileIteratorUsers;
+import com.example.iteratorPattern.SocialNetwokIterable;
+
 import java.util.LinkedList;
 import java.util.List;
 
-public class UserProfile implements SocialNetworkProfile{
+public class UserProfile implements SocialNetworkProfile, SocialNetwokIterable {
 
     private List<SocialNetworkProfile> following;
     private String userName;
@@ -21,8 +25,35 @@ public class UserProfile implements SocialNetworkProfile{
         }
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof UserProfile other){
+            if(other.getUserName().equals(this.userName) && other.age == this.age) return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        Integer n = age;
+        return userName.hashCode() + n.hashCode();
+    }
+
     @Override
     public String toString() {
         return "I'm " + userName + " and I'm " + age + " years old";
+    }
+
+    @Override
+    public ProfileIterator iterator() {
+        return new ProfileIteratorUsers(this);
     }
 }
