@@ -25,6 +25,10 @@ public class UserProfile implements SocialNetworkProfile, SocialNetwokIterable {
         }
     }
 
+    public List<SocialNetworkProfile> getFollowing(){
+        return  this.following;
+    }
+
     public String getUserName() {
         return userName;
     }
