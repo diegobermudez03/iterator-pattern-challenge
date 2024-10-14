@@ -5,7 +5,7 @@ import com.example.entities.UserProfile;
 
 import java.util.*;
 
-public class ProfileIteratorUsers implements ProfileIterator{
+public class ProfileIteratorUsers implements ProfileIterator<SocialNetworkProfile>{
 
     private Set<SocialNetworkProfile> visited;
     private ArrayDeque<SocialNetworkProfile> toVisit;

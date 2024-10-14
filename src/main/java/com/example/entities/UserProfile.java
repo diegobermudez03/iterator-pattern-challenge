@@ -7,7 +7,7 @@ import com.example.iteratorPattern.SocialNetwokIterable;
 import java.util.LinkedList;
 import java.util.List;
 
-public class UserProfile implements SocialNetworkProfile, SocialNetwokIterable {
+public class UserProfile implements SocialNetworkProfile, SocialNetwokIterable<ProfileIterator<SocialNetworkProfile>> {
 
     private List<SocialNetworkProfile> following;
     private String userName;
@@ -57,7 +57,7 @@ public class UserProfile implements SocialNetworkProfile, SocialNetwokIterable {
     }
 
     @Override
-    public ProfileIterator iterator() {
+    public ProfileIterator<SocialNetworkProfile> iterator() {
         return new ProfileIteratorUsers(this);
     }
 }

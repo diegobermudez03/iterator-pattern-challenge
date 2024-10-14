@@ -3,6 +3,8 @@ package com.example;
 import com.example.entities.EnterpriseProfile;
 import com.example.entities.UserProfile;
 
+import java.util.LinkedList;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -41,7 +43,6 @@ public class Main {
         user7.addFollowing(user10, enterprise3);
         user9.addFollowing(user1, user5, enterprise1);
         user3.addFollowing(user9, enterprise5);
-
 
         //group 2
         UserProfile user11 = new UserProfile("Juan", 24);

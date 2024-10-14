@@ -1,5 +1,5 @@
 package com.example.iteratorPattern;
 
-public interface SocialNetwokIterable {
-    ProfileIterator iterator();
+public interface SocialNetwokIterable<T> {
+    T iterator();
 }
